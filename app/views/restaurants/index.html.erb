@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3"></div>
+    <h1>Restaurants</h1>
+    <ul style="list-style-type: none;">
+      <% @restaurants.each do |restaurant| %>
+      <li>
+        <h4>
+        <%=link_to restaurant.name, restaurant_path(restaurant) %>
+        </h4>
+        <p>
+          <%= restaurant.address  %>
+        </p>
+      </li>
+      <% end %>
+    </ul>
+    <%= link_to "Add a restaurant", new_restaurant_path %>
+  </div>
+</div>
